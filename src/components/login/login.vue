@@ -57,6 +57,8 @@ export default {
               });
               //跳转到首页
               this.$router.push('/home')
+              //将登陆中的token保存起来
+              localStorage.setItem('token',res.data.data.token)
             }else {
                 this.$message.error(meta.msg)
             }
@@ -71,7 +73,7 @@ export default {
 };
 </script>
 
-<style  scoped>
+<style scoped>
 .loginbox {
   width: 450px;
   height: 350px;
